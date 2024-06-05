@@ -1,0 +1,15 @@
+services:
+    app:
+        container_name: asiayo-laravel-currency-api
+        image: asiayo-laravel-currency-api
+        environment:
+            NEWRELIC: "true"
+        build:
+            dockerfile: docker/Dockerfile
+            context: ../
+        volumes:
+            - ../.:/var/www/html
+        ports:
+            - "80:80"
+        restart: always
+        network_mode: "host"
