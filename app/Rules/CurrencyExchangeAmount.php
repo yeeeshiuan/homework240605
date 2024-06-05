@@ -15,7 +15,7 @@ class CurrencyExchangeAmount implements ValidationRule
     public function validate(string $attribute, mixed $value, Closure $fail): void
     {
         // Check if the value is an integer
-        if (is_int($value)) {
+        if (is_numeric($value)) {
             return;
         }
 
